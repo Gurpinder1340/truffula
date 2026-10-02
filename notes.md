@@ -20,6 +20,9 @@ PLEASE MAKE FREQUENT COMMITS AS YOU FILL OUT THIS FILE.
 
 
 ## TruffulaOptions.java / TruffulaOptionsTest.java
+- Figures out what setting the user chose based on the options they enter.
+- Stores the options the user picked so the program knows how to print the directory tree. 
+
 
 ## TruffulaPrinter.java / TruffulaPrinterTest.java
 
