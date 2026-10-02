@@ -14,6 +14,10 @@ PLEASE MAKE FREQUENT COMMITS AS YOU FILL OUT THIS FILE.
 - Each color has its own ANSI code 
 
 ## ColorPrinter.java / ColorPrinterTest.java
+- prints text with different colors in the terminal.
+- uses ConsoleColor to set the color and prints message 
+- tests to make sure the text is printed correctly
+
 
 ## TruffulaOptions.java / TruffulaOptionsTest.java
 
