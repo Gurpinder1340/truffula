@@ -4,6 +4,9 @@ As part of Wave 0, please fill out notes for each of the below files. They are i
 PLEASE MAKE FREQUENT COMMITS AS YOU FILL OUT THIS FILE.
 
 ## App.java
+- main class that starts the program and prints a directory tree
+- h: show hidden files -nc: do not use color 
+- TruffulaPrinter is used to print the directory tree. 
 
 ## ConsoleColor.java
 
