@@ -9,6 +9,9 @@ PLEASE MAKE FREQUENT COMMITS AS YOU FILL OUT THIS FILE.
 - TruffulaPrinter is used to print the directory tree. 
 
 ## ConsoleColor.java
+- enum that stores different console text colors using ANSI codes
+- RESET changes the text back to normal
+- Each color has its own ANSI code 
 
 ## ColorPrinter.java / ColorPrinterTest.java
 
