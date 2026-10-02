@@ -22,8 +22,14 @@ PLEASE MAKE FREQUENT COMMITS AS YOU FILL OUT THIS FILE.
 ## TruffulaOptions.java / TruffulaOptionsTest.java
 - Figures out what setting the user chose based on the options they enter.
 - Stores the options the user picked so the program knows how to print the directory tree. 
+- Tests to make sure TruffulaOptions correctly reads the users options.
 
 
 ## TruffulaPrinter.java / TruffulaPrinterTest.java
+- prints the directory tree like files and folders using different colors.
+- TruffulaPrinterTest is test if the files and folders are printed correctly.
+
 
 ## AlphabeticalFileSorter.java
+- Sorts the files alphabetically by name
+- uses array of files and returns it sorted
