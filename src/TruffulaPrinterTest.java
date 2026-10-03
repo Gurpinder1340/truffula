@@ -149,4 +149,30 @@ public class TruffulaPrinterTest {
         // Assert that the output matches the expected output exactly
         assertEquals(expected.toString(), output);
     }
+    @Test 
+    void testPrintTree(@TempDir File tempDir) throws IOException {
+       // Arrange
+       File root = new File(tempDir, "Folder");
+       root.mkdir();
+
+       File file = new File(root, "test.txt");
+       file.createNewFile();
+
+       TruffulaOptions options = new TruffulaOptions(root, false, false);
+
+
+  ByteArrayOutputStream output = new ByteArrayOutputStream();
+  PrintStream printStream = new PrintStream(output);
+  TruffulaPrinter printer = new TruffulaPrinter(options, printStream);
+
+  // Act
+  printer.printTree();
+
+
+   // Assert
+  String result = output.toString();
+  assertTrue(result.contains("Folder/"));
+  assertTrue(result.contains("test.txt"));
+
+    }
 }
