@@ -117,8 +117,7 @@ public class TruffulaPrinter {
 
   }
  
-
-    private void printTree(File current, int depth) {
+  private void printTree(File current, int depth) {
       if (current == null) {
         return;
     }
@@ -128,6 +127,14 @@ public class TruffulaPrinter {
     }
       String space = " ".repeat(depth);
       String name = current.getName();
+
+    ConsoleColor color = ConsoleColor.WHITE;
+
+  if (options.isUseColor()) {
+    color = colorSequence.get((depth / 3) % colorSequence.size());
+}
+
+  out.setCurrentColor(color);
 
       if (current.isDirectory()) {
         out.println(space + name + "/");
@@ -143,7 +150,7 @@ public class TruffulaPrinter {
         }
       }
     }
-    }
+}
 
     
 
