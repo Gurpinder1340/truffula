@@ -131,7 +131,7 @@ public class TruffulaPrinter {
     ConsoleColor color = ConsoleColor.WHITE;
 
   if (options.isUseColor()) {
-    color = colorSequence.get((depth / 3) % colorSequence.size());
+    color = colorSequence.get((depth / 1 ) % colorSequence.size());
 }
 
   out.setCurrentColor(color);
@@ -145,6 +145,7 @@ public class TruffulaPrinter {
       File[] children = current.listFiles();
 
       if (children != null) {
+        children = AlphabeticalFileSorter.sort(children);
         for (File child : children) {
           printTree(child, depth + 3);
         }
