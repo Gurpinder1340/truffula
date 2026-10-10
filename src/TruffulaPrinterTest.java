@@ -175,4 +175,30 @@ public class TruffulaPrinterTest {
   assertTrue(result.contains("test.txt"));
 
     }
+@Test
+void testHiddenFileIsNotPrinted(@TempDir File tempDir) throws IOException {
+    // Arrange
+    File root = new File(tempDir, "Folder");
+    root.mkdir();
+
+    createHiddenFile(root, ".secret.txt");
+
+    File visible = new File(root, "visible.txt");
+    visible.createNewFile();
+
+    TruffulaOptions options = new TruffulaOptions(root, false, false);
+
+    ByteArrayOutputStream output = new ByteArrayOutputStream();
+    PrintStream printStream = new PrintStream(output);
+    TruffulaPrinter printer = new TruffulaPrinter(options, printStream);
+
+    // Act
+    printer.printTree();
+
+    // Assert
+    String result = output.toString();
+    assertTrue(result.contains("visible.txt"));
+    assertTrue(!result.contains(".secret.txt"));
+}
+     
 }

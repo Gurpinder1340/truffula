@@ -122,6 +122,10 @@ public class TruffulaPrinter {
       if (current == null) {
         return;
     }
+
+    if (current.isHidden() && !options.isShowHidden()) {
+      return;
+    }
       String space = " ".repeat(depth);
       String name = current.getName();
 
